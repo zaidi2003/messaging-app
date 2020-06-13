@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Message{% endblock %}
+
+{% block head %}
+<h1>Messaging Board</h1>
+{% endblock %}
+
+{% block body %}
+
+
+{% for message in messages %}
+
+
+<div name="sender">
+  <p><b>({{message.sender}})</b> {{message.message}}     ----{{message.time}}</p>
+
+</div>
+<div name="content">
+
+</div>
+{% endfor %}
+
+
+
+<form  action="/" method="POST">
+  <input type="text" name="sender" value="Name">
+  <input type="text" name="content" value="Message">
+  <input type="submit" name="submit" value="submit">
+</form>
+
+{% endblock %}
